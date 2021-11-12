@@ -1,0 +1,25 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+{% block title %}Update Book{% endblock title %}
+{% block content %}
+<div class="container">
+ <div class="row my-3">
+  <div class="col-sm-6 offset-sm-3">
+   <h3>Update Book</h3>
+   <hr>
+   <form action="" method="post" novalidate class="shadow p-5">
+     {% csrf_token %}
+     {% for fm in form %}
+     <div class="row my-2">
+        <label for="formGroupExampleInput" class="form-label"><h5>{{fm.label_tag}}</h5></label><br>
+        {{fm}}
+      </div>
+     {% endfor %}
+     <div class="row my-3">
+        <input type="submit" value="Update" class="btn btn-primary">
+     </div> 
+    </form>
+  </div>
+ </div>
+</div>
+{% endblock content %}

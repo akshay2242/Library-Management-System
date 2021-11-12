@@ -1,0 +1,39 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+{% block title %}All Book{% endblock title %}
+{% block content %}
+    <div class="text-center my-3">
+        <h1>All Available Books in Library</h1> <hr> <br>
+    </div>
+    
+    <table class="table table-bordered table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author Name </th>
+            <th scope="col">Published Date</th>
+            <th scope="col">Available Status</th>
+            <th scope="col">Action</th>
+        
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for dt in data %}
+          <tr>
+              <td>{{dt.id}}</td>
+            <td>{{dt.title}}</td>
+            <td>{{dt.author_name}}</td>
+            <td>{{dt.published_date}}</td>
+            <td>{{dt.available_status}}</td>
+            <td><a href="{% url 'update_book' dt.id %}" class="btn btn-warning btn-sm">Update</a>
+                <a href="{% url 'delete_book' dt.id %}" class="btn btn-danger btn-sm">Delete </a>
+            </td>
+    
+          </tr>   
+          {% endfor %}     
+        </tbody>
+      </table>
+      <a href="{% url 'staff_dashboard' %}" class="btn btn-primary">Back</a>
+{% endblock content %}

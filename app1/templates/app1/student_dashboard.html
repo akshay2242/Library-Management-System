@@ -1,0 +1,15 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+{% block title %}Student Dashboard{% endblock title %}
+
+{% block content %}
+<div class="text-center my-3">
+    <h1>Student Dashboard</h1> <hr> <br>
+</div>
+<div class="row my-3">
+    <a href="{% url 'all_books_for_student' %}" class="btn btn-primary">Available Books in Library</a>
+</div> 
+<div class="row my-3">
+    <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+</div>
+{% endblock content %}

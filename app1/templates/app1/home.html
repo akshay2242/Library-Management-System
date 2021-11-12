@@ -1,0 +1,29 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %} 
+
+{% block content %}
+<div class="text-center my-3">
+    <h1>Welcome To Library Management System</h1> <hr> <br><br>
+</div>    
+<div class="container">
+    <div class="row">
+        
+        <div class="col ">
+            <div class="text-center">
+                <h3>Are you Student?</h3>
+                <a href="{% url 'student_dashboard' %}" class="btn btn-primary">Click here</a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="text-center">
+                <h3>Are you Staff?</h3>
+                <a href="{% url 'login' %}" class="btn btn-primary">Click here</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}}
